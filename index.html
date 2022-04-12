@@ -1,4 +1,4 @@
-<!-- !!!Netlify 통해 도메인 열려면 "index.html" 무조건 있어야함 -->
+<!-- !!!Netlify 통해 도메인 열려면 "index.html" 무조건 있어야함!!! -->
 
 <!DOCTYPE html>
 <!-- 문서 타입: html -->
@@ -9,6 +9,19 @@
         <!-- <title>: 페이지 제목 (탭에 뜬다) -->
         <meta charset="utf-8">
         <!-- 웹 브라우저에게 utf-8로 문서 읽어라(한글로 읽기) -->
+
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VT7T7BGVJG"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VT7T7BGVJG');
+        </script>
+
+        <link rel="stylesheet" href="style.css" />
+
     </head>
 
     <body>
@@ -16,24 +29,28 @@
         <!-- <a>: 링크이동, href속성: 이동할 주소 -->
         <!-- +) target속성: blank로 지정하면 새 탭에서 링크 열림 -->
         
-        <ol>
-        <!-- <ol>: ordered list, <li>: list item 목록 정리 -->
-         <li><a href="1.html.html">HTML</a></li>
-         <li><a href="2.css.html">CSS</a></li>
-         <li><a href="3.javascript.html">JavaScript</a></li>
-        </ol>
+        <div id="grid">
+            <ol>
+            <!-- <ol>: ordered list, <li>: list item 목록 정리 -->
+                <li><a href="1.html.html">HTML</a></li>
+                <li><a href="2.css.html">CSS</a></li>
+                <li><a href="3.javascript.html">JavaScript</a></li>
+            </ol>
 
-        <h2>WEB이란 무엇인가?</h2>
-        <p style="margin-top:40px">
-        <!-- <p>: "의미론적" 문단, style속성: CSS기술 -->
-            The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform.[1] It was originally a hypertext document management system[2] accessed over the Internet.[3] The resources of the Web are transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users by a software application called a web browser, and are published by a software application called a web server. Web resources may be any type of downloaded media, but web pages are hypertext documents formatted in Hypertext Markup Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs, which permits users to navigate to other web resources. In addition to text, web pages may contain references to images, video, audio, and software components, which are either displayed or internally executed in the user's web browser to render pages or streams of multimedia contents.
-        </p>
+            <div id="article">
+                <h2>WEB이란 무엇인가?</h2>
+                <p style="margin-top:40px">
+                <!-- <p>: "의미론적" 문단, style속성: CSS기술 -->
+                    The World Wide Web (WWW), commonly known as the Web, is the world's dominant software platform.[1] It was originally a hypertext document management system[2] accessed over the Internet.[3] The resources of the Web are transferred via the Hypertext Transfer Protocol (HTTP), may be accessed by users by a software application called a web browser, and are published by a software application called a web server. Web resources may be any type of downloaded media, but web pages are hypertext documents formatted in Hypertext Markup Language (HTML). Special HTML syntax displays embedded hyperlinks with URLs, which permits users to navigate to other web resources. In addition to text, web pages may contain references to images, video, audio, and software components, which are either displayed or internally executed in the user's web browser to render pages or streams of multimedia contents.
+                </p>
         
-        <p>
-            <!-- <iframe>: 동영상태그 -->
-            <!-- 밑의 코드는 유튜브 퍼가기에서 복붙함 -->
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/7ujWkFyw01g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </p>
+                <p>
+                    <!-- <iframe>: 웹문서 이동 -->
+                    <!-- 밑의 코드는 유튜브 퍼가기에서 복붙함 -->
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/7ujWkFyw01g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </p>
+            </div>
+        </div>
 
         <p>
             <!-- disqus기능 사용하기 (코드 복붙) -->
