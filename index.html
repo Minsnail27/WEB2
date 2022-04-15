@@ -20,11 +20,124 @@
         gtag('config', 'G-VT7T7BGVJG');
         </script>
 
-        <link rel="stylesheet" href="style.css" />
+        <!-- style.css 파일로 따로 분리하여 <link>태그로 연결시킴 -->
+        <link rel="stylesheet" href="style.css" /> 
+
+        <!-- color.js 파일로 따로 분리, javascript 파일 분리사용 -->
+        <script src="color.js"></script>
+
+        <!-- jQuery 라이브러리 사용 위한 준비물 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     </head>
 
     <body>
+        <!-- var 변수 = (내가 지정하고 싶은 것(?)): 줄여서 표현 가능! -->
+        <!-- 1st ver. 함수 쓰기 전 조건문+배열&반복문
+        <input id="night_day" type="button" value="night" 
+        onclick = 
+          "var target = document.querySelector('body');      
+          if(document.querySelector('#night_day').value === 'night') {
+            target.style.backgroundColor = 'black';
+            target.style.color= 'white';
+            document.querySelector('#night_day').value = 'day';
+
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while (i < alist.length) {
+                alist[i].style.color = 'powderblue';
+                console.log(alist[i]);
+                i = i + 1;
+            }   
+          } 
+          else {
+            target.style.backgroundColor = 'white';
+            target.style.color= 'black';
+            document.querySelector('#night_day').value = 'night';
+            
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while (i < alist.length) {
+                alist[i].style.color = 'powderblue';
+                console.log(alist[i]);
+                i = i + 1;
+            }
+          }"
+        > -->
+
+        <!-- 2nd ver. <a>에 대한 속성 부여하는 함수 만듦
+        <script>
+          function setColor(color) {
+            var alist = document.querySelector('a');
+            var i = 0;
+            while (i < alist.length) {
+              alist[i].style.color = color;
+              console.log(alist[i]);
+              i = i + 1;
+            }
+          }
+
+          function nightDayHandler(self) {
+            var target = document.querySelector('body');
+            if (self.value === 'night') {
+              target.style.backgroundColor = 'black';
+              target.style.color = 'white';
+              self.value = 'day'
+
+              setColor('powderblue');
+            }
+            else {
+              target.style.backgroundColor = 'white';
+              target.style.color = 'black';
+              self.value = 'day'
+
+              setColor('blue');
+            }
+          }
+        </script> -->
+
+        <!-- 3rd ver. 변수에 객체 담기 전 -->
+        <!-- 중복되지 않는 함수명으로 <a> 뿐만 아니라 <body>에 대한 속성을 일일이 지정함
+        <script>
+          function LinkSetColor(color) {
+              var alist = document.querySelectorAll('a');
+              var i = 0;
+              while (i < alist.length) {
+                  alist[i].style.color = color;
+                  console.log(alist[i]);
+                  i = i + 1;
+              }
+          }          
+          function BodySetColor(color) {
+            document.querySelector('body').style.color = color;
+          }
+          function BodySetBackgroundSetColor(color) {
+            document.querySelector('body').style.backgroundColor = color;
+          }
+
+          function nightDayHandler(self) {
+              var target = document.querySelector('body');
+              if (self.value === 'night') { 
+                  BodySetBackgroundSetColor('black');
+                  BodySetColor('white');
+                  self.value = 'day'
+                  
+                  LinkSetColor('powderblue');
+                }
+              else {
+                  BodySetBackgroundSetColor('white');
+                  BodySetColor('black');
+                  self.value = 'night'
+
+                  LinkSetColor('blue');
+                }
+          }        
+        </script> -->
+
+
+        <!-- 여기서부터 Toggle(야간모드 버튼) 만들기  -->
+        <input type="button" value="night" onclick="nightDayHandler(this);">
+        
         <h1><a href="index.html">WEB</a></h1>
         <!-- <a>: 링크이동, href속성: 이동할 주소 -->
         <!-- +) target속성: blank로 지정하면 새 탭에서 링크 열림 -->
